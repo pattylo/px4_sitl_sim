@@ -1,1 +1,1 @@
-rm -rf build/scout install/scout log
+rm -rf build/ install/ log/

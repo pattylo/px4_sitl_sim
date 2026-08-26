@@ -7,6 +7,8 @@ build/
 install/
 log/
 
+skills/
+
 # C extensions
 *.so
 

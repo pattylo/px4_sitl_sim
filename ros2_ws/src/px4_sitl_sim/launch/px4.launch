@@ -1,12 +1,14 @@
 <launch>
+	<!-- Override these three arguments for every PX4 instance. -->
 	<arg name="fcu_url" default="udp://:14540@127.0.0.1:14580" />
-	<arg name="gcs_url" default="" />
+	<arg name="namespace" default="mavros" />
 	<arg name="tgt_system" default="1" />
+
+	<arg name="gcs_url" default="" />
 	<arg name="tgt_component" default="1" />
 	<arg name="log_output" default="screen" />
 	<arg name="fcu_protocol" default="v2.0" />
 	<arg name="respawn_mavros" default="false" />
-	<arg name="namespace" default="mavros"/>
 
 	<include file="$(find-pkg-share mavros)/launch/node.launch">
 		<arg name="pluginlists_yaml" value="$(find-pkg-share mavros)/launch/px4_pluginlists.yaml" />
@@ -18,6 +20,6 @@
 		<arg name="log_output" value="$(var log_output)" />
 		<arg name="fcu_protocol" value="$(var fcu_protocol)" />
 		<arg name="respawn_mavros" value="$(var respawn_mavros)" />
-		<arg name="namespace" value="$(var namespace)"/>
+		<arg name="namespace" value="$(var namespace)" />
 	</include>
 </launch>

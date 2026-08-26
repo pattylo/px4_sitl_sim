@@ -1,6 +1,4 @@
 tmux kill-session -t multi_sim 2>/dev/null || true
-tmux kill-session -t scout 2>/dev/null || true
-tmux kill-session -t topics_echo 2>/dev/null || true
 
 # cleanup stray Gazebo / PX4 if they remain
 # Try to kill as user first, then with sudo if needed (for root processes)

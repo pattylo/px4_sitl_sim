@@ -9,15 +9,27 @@ setup(
     version='0.1.0',
     packages=find_packages(),
     data_files=[
-        ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
+        (
+            'share/ament_index/resource_index/packages',
+            ['resource/' + package_name],
+        ),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
-        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch')),
+        (
+            os.path.join('share', package_name, 'launch'),
+            glob('launch/*.launch.py'),
+        ),
+        (
+            os.path.join('share', package_name, 'launch'),
+            glob('launch/*.launch'),
+        ),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.viz')),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.yaml')),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.rviz')),
-        (os.path.join('share', package_name, 'launch', 'duke_traj'), glob('launch/duke_traj/*.csv')),
-        # Avoid glob('launch/*'): it matches __pycache__ and breaks install (dirs are not files).
+        (
+            os.path.join('share', package_name, 'launch', 'duke_traj'),
+            glob('launch/duke_traj/*.csv'),
+        ),
+        # Avoid glob('launch/*'): it matches __pycache__ and breaks install.
     ],
     install_requires=[],
     zip_safe=True,
@@ -27,7 +39,8 @@ setup(
     license='MIT',
     entry_points={
         'console_scripts': [
-            'x500_v2_kf = px4_sitl_sim.x500_v2_kf:main',            
+            'swarm_frame_sync = px4_sitl_sim.swarm_frame_sync:main',
+            'x500_v2_kf = px4_sitl_sim.x500_v2_kf:main',
         ],
     },
 )
